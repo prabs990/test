@@ -7,7 +7,7 @@
     for (var i = 0; i < sURLVariables.length; i++) 
     {
         var sParameterName = sURLVariables[i].split('=');
-        console.log("sParameterName"+sParameterName);
+        console.log("sParameterName=="+sParameterName);
         if (sParameterName[0] == sParam) 
         {
             return sParameterName[1];
@@ -25,7 +25,9 @@
   Redirect URI :<input type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html"/><br>
   Authorization code:<input type="text" label="authorization code"/><div id="p1"></div><br>
 <script>
+  console.log("before code===");
   var authcode = GetURLParameter('code');
+  console.log("authcode====");
   document.getElementById('p1').value = authcode;
   </script>
 </body>
