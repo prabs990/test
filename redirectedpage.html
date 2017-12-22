@@ -1,8 +1,14 @@
 <html>
+  <script>
+    var authcode = GetURLParameter('code');
+   document.getElementById('p1').value = authcode;
+    console.log("authcode "+ authcode);
+  </script>
 <body>
-  Client Id :<input type="text" label="client id" /><br>
-  Client Secret :<input type="text" label="client secret" /><br>
-Authorization code:<input type="text" label="authorization code" /><br>
+  Client Id :<input type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD"/><br>
+  Client Secret :<input type="text" label="client secret" value="5919062353197365029"/><br>
+  Redirect URI :<input type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html"/><br>
+  Authorization code:<input type="text" label="authorization code"/><div id="p1"></div><br>
 
 </body>
 </html>
