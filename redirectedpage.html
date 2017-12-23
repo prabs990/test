@@ -1,6 +1,6 @@
 <html>
   <body>
-  <form method="post">  
+  <form id ="fm1" method="post">  
   Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD" readonly/><br>
   Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
   Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
@@ -39,7 +39,8 @@
      function gotosf(){
       console.log("inside gotosf ==="+a);
 //       document.getElementById('b1').formaction=a;
-       window.open(a);
+//       window.open(a);
+         document.getElementById('fm1').formaction=a;  
     }
   </script>
 
