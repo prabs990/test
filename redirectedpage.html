@@ -31,16 +31,22 @@
 
   document.getElementById('i4').value = authcode;
   
-    var a = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
-      document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "&redirect_uri=" +
-      document.getElementById('i3').value;
-    console.log("a==="+a);
+//     var a = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
+//       document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "&redirect_uri=" +
+//       document.getElementById('i3').value;
+//     console.log("a==="+a);
 
+    var b = document.getElementById('i4').value;
+    var c = document.getElementById('i1').value;
+    var d = document.getElementById('i2').value;
+    var e = document.getElementById('i3').value;
+    
      function gotosf(){
       console.log("inside gotosf ==="+a);
 //       document.getElementById('b1').formaction=a;
 //       window.open(a);
-         document.getElementById('fm1').action=a;  
+//          document.getElementById('fm1').action=a;  
+       $.post("https://login.salesforce.com/services/oauth2/token", { grant_type=authorization_code&: b, &client_id=: c,&client_secret=: d,&redirect_uri=: e } );
     }
   </script>
 
