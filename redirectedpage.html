@@ -5,21 +5,22 @@
       Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
       Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
       Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
-        <input id="b1" type="submit" value="Go to Salesforce" onclick="gotosf()"/>
+        <input id="b1" type="submit" value="Get Authorization Code" onclick="GetURLParameter()"/>
   
     </form>  
 <!--     <form name='myForm' action='login.salesforce.com/services/oauth2/token' method='POST'> -->
-    <form name='myForm'>
+<!--     <form name='myForm'>
       <input id="f1" type="hidden" name="grant_type=authorization_code%26code"/>
       <input id="f2"  type="hidden" name="%26client_id" />
       <input id="f3"  type="hidden" name="%26client_secret" />
       <input id="f4"  type="hidden" name="%26redirect_uri" />
       
-    </form>
+    </form> -->
   </body>   
   <script>
-    function GetURLParameter(sParam)
+    function GetURLParameter()
 {
+    var sParam='code';
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++) 
@@ -34,23 +35,23 @@
     }
 }
     
-    function gotosf(){
+//     function gotosf(){
    
-       console.log("inside gotosf ==="+a);
-       var authcode = GetURLParameter('code');
-       document.getElementById('i4').value = authcode;
+//        console.log("inside gotosf ==="+a);
+//        var authcode = GetURLParameter('code');
+//        document.getElementById('i4').value = authcode;
   
-        var b = document.getElementById('i4').value;
-        var c = document.getElementById('i1').value;
-        var d = document.getElementById('i2').value;
-        var e = document.getElementById('i3').value;
+//         var b = document.getElementById('i4').value;
+//         var c = document.getElementById('i1').value;
+//         var d = document.getElementById('i2').value;
+//         var e = document.getElementById('i3').value;
            
-       document.getElementById('f1').value = b;//authorization
-       document.getElementById('f2').value = c;//client id
-       document.getElementById('f3').value = d;//client secret
-       document.getElementById('f4').value = e;//redirect
-//        document.forms["myForm"].submit();
-    }
+//        document.getElementById('f1').value = b;//authorization
+//        document.getElementById('f2').value = c;//client id
+//        document.getElementById('f3').value = d;//client secret
+//        document.getElementById('f4').value = e;//redirect
+// //        document.forms["myForm"].submit();
+//     }
     
   </script>
 
