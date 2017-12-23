@@ -54,10 +54,15 @@
 //       window.open(a);
 //          document.getElementById('fm1').action=a;  
 //        $.post("https://login.salesforce.com/services/oauth2/token", { grant_type=authorization_code: b, client_id: c,client_secret: d,redirect_uri: e } );
+       
        document.getElementById('f1').value = b;
        document.getElementById('f2').value = c;
        document.getElementById('f3').value = d;
        document.getElementById('f4').value = e;
+       console.log("inside gotosf ==="+b);
+       console.log("inside gotosf ==="+c);
+       console.log("inside gotosf ==="+d);
+       console.log("inside gotosf ==="+e);
        document.forms["myForm"].submit();
     }
     
