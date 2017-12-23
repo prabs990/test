@@ -29,9 +29,9 @@
   console.log("authcode====");
   document.getElementById('p1').value = authcode;
   
-    var a = "grant_type=authorization_code&" + document.getElementById('i4').innerHTML +  "&client_id=" + 
-      document.getElementById('i1').innerHTML + "&client_secret=" + document.getElementById('i2').innerHTML +  "redirect_uri=" +
-      document.getElementById('i3').innerHTML;
+    var a = "grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
+      document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "redirect_uri=" +
+      document.getElementById('i3').value;
     console.log("a==="+a);
   
   </script>
