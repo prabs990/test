@@ -1,12 +1,12 @@
 <html>
   <body>
-    <form method="POST" name="myform" action="index.php?action=contact_agent&agent_id="  onsubmit="SetData()">
+    <form method="POST" name="myform" onsubmit="SetData()">
       Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD" readonly/><br>
       Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
       Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
       Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
         <input id="b1" type="button" value="Get Authorization Code" onclick="GetURLParameter()"/>
-  
+         
     </form>  
 <!--     <form name='myForm' action='login.salesforce.com/services/oauth2/token' method='POST'> -->
 <!--     <form name='myForm'>
@@ -36,6 +36,15 @@
         }
     }
 }
+    function SetData(){
+         var b = document.getElementById('i4').value;//autho
+         var c = document.getElementById('i1').value;//client id
+         var d = document.getElementById('i2').value;//client secret
+         var e = document.getElementById('i3').value;//redirect
+      
+         document.myform.action = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&code="+b+"&client_id="+c+"&client_secret="+d+"&redirect_uri="+e ;
+         myform.submit();
+    }
     
 //     function gotosf(){
    
