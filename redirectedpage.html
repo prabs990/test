@@ -1,10 +1,14 @@
 <html>
   <body>
+  <form method="post">  
   Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD" readonly/><br>
   Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
   Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
   Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
     <input type="button" value="Go to Salesforce" onclick="gotosf()"/>
+    <button id ="b1" type="submit" onclick="gotosf()">Go to SF</button>
+  
+  </form>  
   </body>  
   <script>
     function GetURLParameter(sParam)
@@ -23,13 +27,9 @@
     }
 }
 
-    console.log("before");
-
-  console.log("before code===");
   var authcode = GetURLParameter('code');
-  console.log("authcode====" + authcode);
+
   document.getElementById('i4').value = authcode;
-  
   
     var a = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
       document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "&redirect_uri=" +
@@ -38,7 +38,7 @@
 
      function gotosf(){
       console.log("inside gotosf ==="+a);
-      window.open(a);
+      document.getElementById('b1').formaction=a;
     }
   </script>
 
