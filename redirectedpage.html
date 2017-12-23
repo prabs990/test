@@ -1,14 +1,13 @@
 <html>
   <body>
-  <form >  
-  Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD" readonly/><br>
-  Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
-  Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
-  Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
-    <input id="b1" type="submit" value="Go to Salesforce" "/>
-<!--     <button id ="b1" type="submit" onclick="gotosf()">Go to SF</button> -->
+    <form>  
+      Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD" readonly/><br>
+      Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
+      Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
+      Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
+        <input id="b1" type="submit" value="Go to Salesforce" onclick="gotosf()"/>
   
-  </form>  
+    </form>  
 <!--     <form name='myForm' action='login.salesforce.com/services/oauth2/token' method='POST'> -->
     <form name='myForm'>
       <input id="f1" type="hidden" name="grant_type=authorization_code%26code"/>
@@ -34,36 +33,22 @@
         }
     }
 }
-
-  var authcode = GetURLParameter('code');
-
-  document.getElementById('i4').value = authcode;
-  
-//     var a = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
-//       document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "&redirect_uri=" +
-//       document.getElementById('i3').value;
-//     console.log("a==="+a);
-
-    var b = document.getElementById('i4').value;
-    var c = document.getElementById('i1').value;
-    var d = document.getElementById('i2').value;
-    var e = document.getElementById('i3').value;
     
-     function gotosf(){
-      console.log("inside gotosf ==="+a);
-//       document.getElementById('b1').formaction=a;
-//       window.open(a);
-//          document.getElementById('fm1').action=a;  
-//        $.post("https://login.salesforce.com/services/oauth2/token", { grant_type=authorization_code: b, client_id: c,client_secret: d,redirect_uri: e } );
-       
+    function gotosf(){
+   
+       console.log("inside gotosf ==="+a);
+       var authcode = GetURLParameter('code');
+       document.getElementById('i4').value = authcode;
+  
+        var b = document.getElementById('i4').value;
+        var c = document.getElementById('i1').value;
+        var d = document.getElementById('i2').value;
+        var e = document.getElementById('i3').value;
+           
        document.getElementById('f1').value = b;//authorization
        document.getElementById('f2').value = c;//client id
        document.getElementById('f3').value = d;//client secret
        document.getElementById('f4').value = e;//redirect
-       console.log("inside gotosf ==="+b);
-       console.log("inside gotosf ==="+c);
-       console.log("inside gotosf ==="+d);
-       console.log("inside gotosf ==="+e);
 //        document.forms["myForm"].submit();
     }
     
