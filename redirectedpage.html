@@ -26,7 +26,7 @@
   console.log("before code===");
   var authcode = GetURLParameter('code');
   console.log("authcode====" + authcode);
-  document.getElementById('i4').innerHTML = authcode;
+  document.getElementById('i4').value = authcode;
   
   
     var a = "grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
