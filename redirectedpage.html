@@ -26,11 +26,11 @@
 <script>
   console.log("before code===");
   var authcode = GetURLParameter('code');
-  console.log("authcode====");
-  document.getElementById('p1').value = authcode;
+  console.log("authcode====" + authcode);
+  document.getElementById('p1').innerHTML = authcode;
   
     var a = "grant_type=authorization_code&" + document.getElementById('i4').value +  "&client_id=" + 
-      document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "redirect_uri=" +
+      document.getElementById('i1').value + "&client_secret=" + document.getElementById('i2').value +  "&redirect_uri=" +
       document.getElementById('i3').value;
     console.log("a==="+a);
   
