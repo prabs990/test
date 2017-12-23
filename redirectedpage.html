@@ -6,7 +6,7 @@
   Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
   Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
     <input type="button" value="Go to Salesforce" onclick="gotosf()"/>
-    <button id ="b1" type="submit" onclick="gotosf()">Go to SF</button>
+<!--     <button id ="b1" type="submit" onclick="gotosf()">Go to SF</button> -->
   
   </form>  
   </body>  
@@ -38,7 +38,8 @@
 
      function gotosf(){
       console.log("inside gotosf ==="+a);
-      document.getElementById('b1').formaction=a;
+//       document.getElementById('b1').formaction=a;
+       window.open(a);
     }
   </script>
 
