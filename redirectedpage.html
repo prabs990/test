@@ -16,11 +16,9 @@
     }
 }
     console.log("before");
-    
-   
-    
   </script>
-<body>
+
+  <body>
   Client Id :<input id="i1" type="text" label="client id" value="3MVG9YDQS5WtC11ruJi1cH88D3_4haziuX0QFOo_hAOPyaXm2XvlwnTmCUuTS5n3t_ZtQrKeMcOExmCp3VHGD"/><br>
   Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029"/><br>
   Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html"/><br>
@@ -30,12 +28,13 @@
   var authcode = GetURLParameter('code');
   console.log("authcode====");
   document.getElementById('p1').value = authcode;
-  <form>
+  
     var a = "grant_type=authorization_code&" + document.getElementById('i4').innerHTML +  "&client_id=" + 
       "document.getElementById('i1').innerHTML" + "&client_secret=" + "document.getElementById('i2').innerHTML" +  "redirect_uri=" +
       "document.getElementById('i3').innerHTML";
     console.log("a==="+a);
-    </form>
+  
   </script>
-</body>
+
+  </body>
 </html>
