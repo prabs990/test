@@ -5,7 +5,7 @@
       Client Secret :<input id="i2"  type="text" label="client secret" value="5919062353197365029" readonly/><br>
       Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage.html" readonly/><br>
       Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
-        <input id="b1" type="submit" value="Get Authorization Code" onclick="GetURLParameter()"/>
+        <input id="b1" type="button" value="Get Authorization Code" onclick="GetURLParameter()"/>
   
     </form>  
 <!--     <form name='myForm' action='login.salesforce.com/services/oauth2/token' method='POST'> -->
@@ -23,11 +23,12 @@
     var sParam='code';
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
+    console.log("sParam=="+sParam);
     for (var i = 0; i < sURLVariables.length; i++) 
     {
         var sParameterName = sURLVariables[i].split('=');
         console.log("sParameterName=="+sParameterName);
-        if (sParameterName[0] == sParam) 
+        if (sParameterName[0] == 'code') 
         {
             console.log("sParameterName[1]==="+sParameterName[1]);
             return sParameterName[1];
