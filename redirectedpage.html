@@ -9,7 +9,7 @@
 <!--     <button id ="b1" type="submit" onclick="gotosf()">Go to SF</button> -->
   
   </form>  
-    <form name='myForm' action='https://login.salesforce.com/services/oauth2/token' method='post'>
+    <form name='myForm' action='login.salesforce.com/services/oauth2/token' method='POST'>
       <input id="f1" type="hidden" name="grant_type=authorization_code%26code"/>
       <input id="f2"  type="hidden" name="%26client_id" />
       <input id="f3"  type="hidden" name="%26client_secret" />
@@ -55,10 +55,10 @@
 //          document.getElementById('fm1').action=a;  
 //        $.post("https://login.salesforce.com/services/oauth2/token", { grant_type=authorization_code: b, client_id: c,client_secret: d,redirect_uri: e } );
        
-       document.getElementById('f1').value = b;
-       document.getElementById('f2').value = c;
-       document.getElementById('f3').value = d;
-       document.getElementById('f4').value = e;
+       document.getElementById('f1').value = b;//authorization
+       document.getElementById('f2').value = c;//client id
+       document.getElementById('f3').value = d;//client secret
+       document.getElementById('f4').value = e;//redirect
        console.log("inside gotosf ==="+b);
        console.log("inside gotosf ==="+c);
        console.log("inside gotosf ==="+d);
