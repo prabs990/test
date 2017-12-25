@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <form method="POST" name="myform" onsubmit="SetData()">
+      Client Id :<input id="i1" type="text" label="client id" value="3MVG9g9rbsTkKnAXO6IIzx1AgovqbJp74zOM9LdCPigCfxYFiHZNbh0VkeD0AA9uTrnbCjLQbIRHck264ewHc" readonly/><br>
+      Client Secret :<input id="i2"  type="text" label="client secret" value="8326575768574554158" readonly/><br>
+      Redirect URI :<input  id="i3" type="text" label="redirect uri" value="https://prabs990.github.io/test/redirectedpage1.html" readonly/><br>
+      Authorization code:<input  id="i4" type="text" label="authorization code"/><br>
+        <input id="b1" type="button" value="Get Authorization Code" onclick="GetURLParameter()"/>
+        <input type="submit" value="submit"/>
+         
+    </form>  
+      <input id="f1" type="hidden" name="grant_type=authorization_code%26code"/>
+      <input id="f2"  type="hidden" name="%26client_id" />
+      <input id="f3"  type="hidden" name="%26client_secret" />
+      <input id="f4"  type="hidden" name="%26redirect_uri" />
+  </body>   
+  <script>
+    function GetURLParameter()
+{
+    var sParam='code';
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    console.log("sParam=="+sParam);
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        console.log("sParameterName=="+sParameterName);
+        if (sParameterName[0] == 'code') 
+        {
+            console.log("sParameterName[1]==="+sParameterName[1]);
+            document.getElementById('i4').value =   sParameterName[1];
+            return sParameterName[1];
+        }
+    }
+}
+    function SetData(){
+         var b = document.getElementById('i4').value;//autho
+         var c = document.getElementById('i1').value;//client id
+         var d = document.getElementById('i2').value;//client secret
+         var e = document.getElementById('i3').value;//redirect
+      
+         document.myform.action = "https://fontevacustomer-15623193070--1604b2426b4.force.com/services/oauth2/token?grant_type=authorization_code&code="+b+"&client_id="+c+"&client_secret="+d+"&redirect_uri="+e ;
+         myform.submit();
+    }
+    
+  </script>
+</html>
